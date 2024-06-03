@@ -3,11 +3,24 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 400px;
+  max-width: 440px;
+  width: 100%;
   background: #373737;
   padding: 20px;
   z-index: 1000;
   color: #ffffff;
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 768px) {
+  .dialog {
+    top: 0;
+    left: 0;
+    transform: none;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+  }
 }
 
 .overlay {
@@ -45,6 +58,10 @@
   display: flex;
   align-items: center;
   margin-right: 4px;
+}
+
+.dialogItem input:disabled {
+  opacity: 0.5;
 }
 
 .dialogActions {

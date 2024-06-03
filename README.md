@@ -34,6 +34,13 @@ Production url: https://wgtask.vercel.app/
 
 ## Features
 
-- Using mobx for storing global data
+- Listing dummy elements
+- Filtering list with search and dropdown combined
+- Custom UI components without UI libraries (example: Button component)
+- Styling using css modules
+- Using local state for storing dialog's selected elements
+- Using mobx for storing selected data
 - Using eslint for linting
 - Using prettier for code formatting
+- Responsiveness
+- Deployment

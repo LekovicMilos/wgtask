@@ -53,6 +53,20 @@ const SelectionDialog: React.FC<SelectionDialogProps> = observer(
       setNumberFilter(Number(e.target.value));
     };
 
+    useEffect(() => {
+      const handleKeyDown = (event: KeyboardEvent) => {
+        if (event.key === 'Escape') {
+          handleCancel();
+        }
+      };
+
+      window.addEventListener('keydown', handleKeyDown);
+
+      return () => {
+        window.removeEventListener('keydown', handleKeyDown);
+      };
+    }, [handleCancel]);
+
     const handleOverlayClick = () => {
       handleCancel();
     };
@@ -98,7 +112,7 @@ const SelectionDialog: React.FC<SelectionDialogProps> = observer(
             ))}
           </div>
           <div className="selectedItemsWrapper">
-            {selecteditems.length ? 'Current selected items:' : ''}
+            <div>{selecteditems.length ? 'Current selected items:' : ''}</div>
             <SelectedItems items={selecteditems} toggleItem={toggleItem} />
           </div>
           <div className={styles.dialogActions}>
